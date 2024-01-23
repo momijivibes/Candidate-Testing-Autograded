@@ -13,9 +13,9 @@ let candidateAnswer = "";
 
 
 //TODO: Variables for Part 2
-let questions;
-let correctAnswers;
-let candidateAnswers;
+let questions = ["Who was the first American woman in space?", "True or False: 5 kilometer == 5000 meters?", "(5+3)/2 *10 = ?", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
+let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", 3]
+let candidateAnswers; 
 
 
 function askForName() {
@@ -26,10 +26,29 @@ function askForName() {
 }
 
 function askQuestion() {
-  // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
+// TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
  candidateAnswer = input.question(questions)
 
 }
+
+//tips
+//Replace your code from TODO 1.2b with a loop that programmatically asks each question in the array and stores the user’s responses.//
+//use a for loop to go through different indexes
+//using input.question to ask the next question
+//type conversion can be good practice but not needed 
+// use .push but don't set it equal to the thing
+
+for (candidateAnswers = input.question(questions)) {
+    candidateAnswers.push
+}
+
+
+
+
+
+console.log(candidateAnswers)
+
+
 
 
 function gradeQuiz(candidateAnswers) {
