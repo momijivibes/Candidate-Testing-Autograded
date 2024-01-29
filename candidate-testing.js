@@ -38,25 +38,54 @@ function askQuestion() {
 
 }
 
+
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   // iterate/loop - through all answers - 
 
+//   for (let i = 0; i < candidateAnswers.length; i++) {
+//     if (candidateAnswers[i] == correctAnswers[i]) {
+//       console.log("Correct Answer")
+//     } else {
+//       console.log("Incorrect Answer")
+//     }
+//   }
+// }
+
+  let numCorrect = 0;
+
   for (let i = 0; i < candidateAnswers.length; i++) {
-    if (candidateAnswers[i] == correctAnswers[i]) {
-      console.log("Correct Answer")
+    let candidateAnswerNormalized = candidateAnswers[i].toLowerCase();
+    let correctAnswerNormalized = correctAnswers[i].toLowerCase();
+
+    if (candidateAnswerNormalized === correctAnswerNormalized) {
+      numCorrect++;
+      console.log("Correct Answer");
     } else {
-      console.log("Incorrect Answer")
+      console.log("Incorrect");
     }
   }
 
+  let totalQuestions = candidateAnswers.length;
+  let score = (numCorrect / totalQuestions) * 100
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  if (score >= 80) {
+    console.log("Passed Quiz");
+  } else {
+    console.log("Failed Quiz");
+  }
 
-
-  return grade;
+  return score;
 }
+
+
+
+/* Part 3 notes for myself
+options and ideas: count number of Correct Answers vs Incorrect Answers
+lower case?
+calculate score
+*/
 
 function runProgram() {
   askForName();
