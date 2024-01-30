@@ -61,9 +61,9 @@ function gradeQuiz(candidateAnswers) {
 
     if (candidateAnswerNormalized === correctAnswerNormalized) {
       numCorrect++;
-      console.log("Correct Answer");
+      console.log(`Question ${i + 1}: Correct Answer`);
     } else {
-      console.log("Incorrect");
+      console.log(`Question ${i + 1}: Correct Answer`);
     }
   }
 
@@ -71,9 +71,9 @@ function gradeQuiz(candidateAnswers) {
   let score = (numCorrect / totalQuestions) * 100
 
   if (score >= 80) {
-    console.log("Passed Quiz");
+    console.log(`Passed quiz with a ${score} %`);
   } else {
-    console.log("Failed Quiz");
+    console.log(`Failed quiz with a ${score} %`);
   }
 
   return score;
